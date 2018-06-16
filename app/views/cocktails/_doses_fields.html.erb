@@ -1,0 +1,24 @@
+
+<div class="row", id="field_1">
+  <div class="col-sm-6 nopadding">
+    <div class="form-group">
+      <%= f.input :description, label: false, input_html: { placeholder: "2cl" } %>
+    </div>
+  </div>
+
+  <div class="col-sm-6 nopadding">
+    <div class="form-group">
+      <div class="input-group">
+
+        <%= f.select :ingredient_id, Ingredient.all.map { |ing| [ing.name, ing.id]} %>
+
+        <div class="input-group-btn">
+          <button class="btn btn-success" type="button" id="add_field"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

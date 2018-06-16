@@ -1,0 +1,17 @@
+<h1><%= @cocktail.name %></h1>
+
+<div class="container">
+  <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name, input_html: {  id: 'cocktail_name'} %>
+        <div class="fields">
+          <%= f.simple_fields_for :doses do |builder| %>
+
+            <%= render "doses_fields", :f => builder %>
+
+        <% end %>
+      </div>
+    <%= f.submit "Submit", input_html: { id: "confirm", class: "btn btn-primary" }%>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag 'application' %>
